@@ -70,7 +70,7 @@ public class City {
     private int getTotalBuildingArea() {
         int totalBuildingArea = 0;
         for (Building building : buildings) {
-            totalBuildingArea += building.getFullArea();
+            totalBuildingArea += building.getArea();
         }
         return totalBuildingArea;
     }
