@@ -49,7 +49,7 @@ public class City {
                 .orElseThrow();
     }
 
-    public List<Building> findBuildingsByStreet(String streetName) {
+    /*public List<Building> findBuildingsByStreet(String streetName) {
         List<Building> result = new ArrayList<>();
         for (Building building : buildings) {
             if (building.getAddress().getStreet().equals(streetName)) {
@@ -57,6 +57,12 @@ public class City {
             }
         }
         return result;
+    }*/
+
+    public List<Building> findBuildingsByStreet(String streetName) {
+        return buildings.stream()
+                .filter(building -> building.getAddress().getStreet().equals(streetName))
+                .toList();
     }
 
     public boolean isThereBuildingWithMorePeopleThan(int numberOfPeopleCanFit) {
