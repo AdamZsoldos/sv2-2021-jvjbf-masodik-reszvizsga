@@ -1,6 +1,7 @@
 package city;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class City {
@@ -32,7 +33,7 @@ public class City {
         buildings.add(building);
     }
 
-    public Building findHighestBuilding() {
+    /*public Building findHighestBuilding() {
         Building tallest = null;
         for (Building building : buildings) {
             if (tallest == null || building.getLevels() > tallest.getLevels()) {
@@ -40,6 +41,12 @@ public class City {
             }
         }
         return tallest;
+    }*/
+
+    public Building findHighestBuilding() {
+        return buildings.stream()
+                .max(Comparator.comparing(Building::getLevels))
+                .orElseThrow();
     }
 
     public List<Building> findBuildingsByStreet(String streetName) {
