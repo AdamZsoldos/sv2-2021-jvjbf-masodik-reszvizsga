@@ -65,13 +65,17 @@ public class City {
                 .toList();
     }
 
-    public boolean isThereBuildingWithMorePeopleThan(int numberOfPeopleCanFit) {
+    /*public boolean isThereBuildingWithMorePeopleThan(int numberOfPeopleCanFit) {
         for (Building building : buildings) {
             if (building.calculateNumberOfPeopleCanFit() > numberOfPeopleCanFit) {
                 return true;
             }
         }
         return false;
+    }*/
+
+    public boolean isThereBuildingWithMorePeopleThan(int numberOfPeopleCanFit) {
+        return buildings.stream().anyMatch(building -> building.calculateNumberOfPeopleCanFit() > numberOfPeopleCanFit);
     }
 
     private void validateBuilding(Building building) {
