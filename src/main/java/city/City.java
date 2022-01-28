@@ -75,7 +75,8 @@ public class City {
     }*/
 
     public boolean isThereBuildingWithMorePeopleThan(int numberOfPeopleCanFit) {
-        return buildings.stream().anyMatch(building -> building.calculateNumberOfPeopleCanFit() > numberOfPeopleCanFit);
+        return buildings.stream()
+                .anyMatch(building -> building.calculateNumberOfPeopleCanFit() > numberOfPeopleCanFit);
     }
 
     private void validateBuilding(Building building) {
