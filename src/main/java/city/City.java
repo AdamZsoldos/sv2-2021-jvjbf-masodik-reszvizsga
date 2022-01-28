@@ -45,7 +45,7 @@ public class City {
 
     public Building findHighestBuilding() {
         return buildings.stream()
-                .max(Comparator.comparing(Building::getLevels))
+                .max(Comparator.comparingInt(Building::getLevels))
                 .orElseThrow();
     }
 
